@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /api
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/raydemo
+    username: postgres
+    password: 123456
+    pool-size:  30
