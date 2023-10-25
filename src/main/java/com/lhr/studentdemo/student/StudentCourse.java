@@ -26,16 +26,17 @@ public class StudentCourse {
   private final String teacherName;
 
 
-  public StudentCourse(UUID studentId, UUID courseId, String name, String description, String department, LocalDate startDate, LocalDate endDate, Integer grade, String teacherName) {
+  public StudentCourse(UUID studentId, UUID courseId, String name, String description, String department, String teacherName, LocalDate startDate, LocalDate endDate, Integer grade) {
     this.studentId = studentId;
     this.courseId = courseId;
     this.name = name;
     this.description = description;
     this.department = department;
+    this.teacherName = teacherName;
     this.startDate = startDate;
     this.endDate = endDate;
     this.grade = grade;
-    this.teacherName = teacherName;
+
   }
 
   public String getTeacherName() {
