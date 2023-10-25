@@ -1,6 +1,9 @@
 package com.lhr.studentdemo.student;
 
+import com.lhr.studentdemo.exception.ApiRequestException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.UUID;
+
+import jakarta.validation.Valid;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,14 +35,13 @@ public class StudentController  {
 
   @GetMapping
   public List<Student> getAllStudents(){
-//    return studentService.getAllStudents();
-    throw new IllegalStateException("Oops can't get all students");
+    return studentService.getAllStudents();
 
 
   }
 
   @PostMapping
-  public void addNewStudent(@RequestBody Student student){
+  public void addNewStudent(@RequestBody @Valid Student student){
     studentService.addNewStudent(student);
   }
 }
